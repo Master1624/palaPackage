@@ -1,0 +1,27 @@
+{
+  "name": "package-introduction",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "dependencies": {
+    "isnumber": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Master1624/palaPackage.git"
+  },
+  "author": "Juan Paladines <jdpa83@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "date",
+    "nodejs"
+  ],
+  "bugs": {
+    "url": "https://github.com/Master1624/palaPackage/issues"
+  },
+  "homepage": "https://github.com/Master1624/palaPackage#readme",
+  "description": "Una utilidad para manejar fechas en formato timestamp y long time"
+}
