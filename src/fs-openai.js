@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-async function tanscribeAudio(audioFilePath, apiKey) {
+async function transcribeAudio(audioFilePath, apiKey) {
   try {
     if (!fs.existsSync(audioFilePath)) {
       throw new Error("El archivo de audio no existe");
@@ -34,7 +34,7 @@ async function tanscribeAudio(audioFilePath, apiKey) {
     const transcription = data.text;
 
     const outputFilePath = path.join(
-      path.dirname(audioFile),
+      path.dirname(audioFilePath),
       `${path.basename(
         audioFilePath,
         path.extname(audioFilePath)
@@ -49,3 +49,14 @@ async function tanscribeAudio(audioFilePath, apiKey) {
     throw error;
   }
 }
+
+const audioPath = "public/audio.mp3";
+const openaiApiKey = "YOUR_OPENAI_API_KEY";
+transcribeAudio(audioPath, openaiApiKey)
+  .then((transcription) => {
+    console.log("Transcipción completada on éxito");
+    console.log(transcription);
+  })
+  .catch((error) => {
+    console.error("Fallo en la transcripción:", error.message);
+  });
